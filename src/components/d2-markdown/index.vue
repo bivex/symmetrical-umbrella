@@ -82,7 +82,7 @@ export default {
         // 百度网盘
         return (this.baidupan && bandupan(quote, this.$baseUrl)) || `<blockquote>${quote}</blockquote>`
       }
-      return marked(data, {
+      return marked.parse(data, {
         ...this.highlight ? { highlight: (code) => highlight.highlightAuto(code).value } : {},
         renderer
       })
