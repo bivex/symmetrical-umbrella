@@ -7,7 +7,7 @@
  * https://github.com/bivex
  *
  * Created: 2025-12-30T07:15:37
- * Last Updated: 2025-12-30T07:16:21
+ * Last Updated: 2025-12-30T07:46:28
  *
  * Licensed under the MIT License.
  * Commercial licensing available upon request.
@@ -100,7 +100,11 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        additionalData: '@use "@/assets/style/public.scss" as *;'
+        additionalData: '@use "@/assets/style/public.scss" as *;',
+        sassOptions: {
+          quietDeps: true,
+          silenceDeprecations: ['import', 'global-builtin']
+        }
       },
       less: {
         lessOptions: {
