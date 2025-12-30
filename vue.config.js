@@ -1,3 +1,18 @@
+/**
+ * Copyright (c) 2025 Bivex
+ *
+ * Author: Bivex
+ * Available for contact via email: support@b-b.top
+ * For up-to-date contact information:
+ * https://github.com/bivex
+ *
+ * Created: 2025-12-30T07:15:37
+ * Last Updated: 2025-12-30T07:16:21
+ *
+ * Licensed under the MIT License.
+ * Commercial licensing available upon request.
+ */
+
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
@@ -9,6 +24,7 @@ const resolve = dir => require('path').join(__dirname, dir)
 // Add environment variable
 process.env.VUE_APP_VERSION = require('./package.json').version
 process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
+process.env.VUE_APP_I18N_LOCALE = 'en'
 
 // Build configuration for multiple pages
 const pages = {
@@ -258,8 +274,8 @@ module.exports = {
   // i18n
   pluginOptions: {
     i18n: {
-      locale: 'zh-chs',
-      fallbackLocale: 'en',
+      locale: 'en',
+      fallbackLocale: 'zh-chs',
       localeDir: 'locales',
       enableInSFC: true
     }

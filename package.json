@@ -3,12 +3,14 @@
   "version": "1.27.0",
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "start": "npm run serve",
-    "dev": "npm run serve",
+    "start": "bun run serve",
+    "dev": "bun run serve",
     "build": "vue-cli-service build --report",
     "build:preview": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build --mode preview",
     "lint": "vue-cli-service lint --fix",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "install": "bun install",
+    "postinstall": "bun run install"
   },
   "dependencies": {
     "@d2-projects/vue-table-export": "^1.1.3",
