@@ -1,5 +1,5 @@
 import { find, assign } from 'lodash'
-import faker from 'faker/locale/zh_CN'
+import { faker } from '@faker-js/faker'
 import { requestForMock, mock } from '@/api/_service.js'
 import * as tools from '@/api/_tools.js'
 
@@ -20,7 +20,7 @@ export function SYS_USER_LOGIN (data = {}) {
     .reply(config => {
       const user = find(users, tools.parse(config.data))
       return user
-        ? tools.responseSuccess(assign({}, user, { token: faker.random.uuid() }))
+        ? tools.responseSuccess(assign({}, user, { token: faker.string.uuid() }))
         : tools.responseError({}, '账号或密码不正确')
     })
   // 接口请求

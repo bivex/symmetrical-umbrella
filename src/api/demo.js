@@ -1,5 +1,5 @@
 import { find, map, random } from 'lodash'
-import faker from 'faker/locale/zh_CN'
+import { faker } from '@faker-js/faker'
 import { requestForMock, mock } from '@/api/_service.js'
 import * as tools from '@/api/_tools.js'
 
@@ -56,13 +56,13 @@ export function DEMO_MOCK_LIST2 (params = {}) {
         total: 1000
       },
       list: map(Array(config.params.pageSize), () => ({
-        key: faker.random.uuid(),
+        key: faker.string.uuid(),
         value: [10, 100, 200, 500][random(0, 3)],
-        type: faker.random.boolean(),
-        admin: faker.name.firstName() + faker.name.lastName(),
-        adminNote: faker.random.words(),
+        type: faker.datatype.boolean(),
+        admin: faker.person.firstName() + faker.person.lastName(),
+        adminNote: faker.lorem.words(),
         dateTimeCreat: faker.date.past(),
-        used: faker.random.boolean(),
+        used: faker.datatype.boolean(),
         dateTimeUse: faker.date.past()
       }))
     }))
