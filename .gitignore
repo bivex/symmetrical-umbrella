@@ -12,6 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Bun lockfile
+bun.lock
 bun.lockb
 
 # Editor directories and files
