@@ -95,7 +95,6 @@ module.exports = {
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
   lintOnSave: true,
   devServer: {
-    publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
     allowedHosts: process.env.NODE_ENV === 'development' ? 'all' : undefined
   },
   css: {
