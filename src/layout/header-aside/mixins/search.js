@@ -1,6 +1,6 @@
 import { mapState, mapMutations } from 'vuex'
 
-import hotkeys from 'hotkeys-js'
+import * as hotkeys from 'hotkeys-js'
 
 export default {
   components: {
